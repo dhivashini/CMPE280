@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.login{position:relative;
+left:460px;
+border: 1px solid black;
+border-radius:5px;
+width:400px;
+padding:10px;}
+</style>
+</head>
+<body>
+<div class = "login">
+<h1 style=background-color:#D3D3D3><center>USER LOGIN</center></h1>
+<form>
+	  <p>USERNAME: <input type="text" name="login" value="" placeholder="Username or Email" id="uname"></p>
+      <p>PASSWORD: <input type="password" name="password" value="" placeholder="Password" id="pwd"></p>
+	  <p ><input type="button" value="Login"  onclick="javascript:validate()" /></p>
+	  	  <p >Create Account/ Forgot?</p>
+
+</form>	     
+</div>
+<script type="text/javascript">
+function validate()
+{
+    if(   document.getElementById("uname").value == "sjsu"
+       && document.getElementById("pwd").value == "sjsu" )
+    {
+        alert( "validation succeeded" );
+        location.href="math.html";
+    }
+    else
+    {
+        alert( "validation failed" );
+        location.href="fail.html";
+    }
+}
+</script>
+</body>
+</html>

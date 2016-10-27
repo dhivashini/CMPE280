@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.col2-set .col-1 { float:left; width:40%; }
+.col2-set .col-2 { float:right; width:60%; }
+.col2-set .col-narrow { width:32%; }
+.col2-set .col-wide { width:50%; }
+</style>
+    </head>
+<body>
+<h1 style=background-color:#D3D3D3><center>Question 2</center></h1><form onsubmit="validateForm()">
+    <p>Select the cosine formula.</p>
+    <div class="col2-set">
+        <div class="col-1">
+<input type="radio" name="q2" id="o1" /> 
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+ 
+    <mrow>
+        <mi>cos</mi>
+         
+      <mo>(</mo>
+        <mrow>
+          <mi>&alpha;</mi>
+          <mo>&plusmn;</mo>
+        <mi>&beta;</mi>      
+        </mrow>
+      <mo>)</mo>
+    </mrow>
+    <mo>=</mo>
+    <mrow>
+        <mi>cos &alpha; cos &beta;</mi>
+        <mi>&#x2213;</mi>
+        <mi>sin &alpha; sin &beta;</mi>
+    </mrow>
+</math>
+            <p/></p>
+
+    <input type="radio" name="q2" id="o2" /> 
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+ 
+    <mrow>
+        <mi>sin &alpha; + sin &beta;</mi>
+        </mrow>
+        <mo>=</mo>
+    <mrow>
+        <mi>2 sin</mi>
+        <mo>(</mo>
+        <mfrac>
+        <mrow>
+            <mi>&alpha; + &beta;</mi></mrow>
+        <mrow>
+            <mn>2</mn></mrow>
+        </mfrac>
+        <mo>)</mo>
+        <mi>cos</mi>
+        <mo>(</mo>
+        <mfrac>
+        <mrow>
+            <mi>&alpha; </mi><mo>-</mo> <mi> &beta;</mi></mrow>
+        <mrow>
+            <mn>2</mn></mrow>
+        </mfrac>
+        <mo>)</mo>
+    </mrow>
+             </math>
+
+        
+        
+                </div>
+         <div class="col-2">
+             <input type="radio" name="q2" id="o3" /> 
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+ 
+    <mrow>
+        <mi>sin</mi>
+         
+      <mo>(</mo>
+        <mrow>
+          <mi>&alpha;</mi>
+          <mo>&plusmn;</mo>
+        <mi>&beta;</mi>      
+        </mrow>
+      <mo>)</mo>
+    </mrow>
+    <mo>=</mo>
+    <mrow>
+        <mi>sin &alpha; cos &beta;</mi>
+        <mi>&plusmn;</mi>
+        <mi>cos &alpha; sin &beta;</mi>
+    </mrow>
+</math>
+<br/>
+<p/>
+     <input type="radio" name="q2" id="o4" /> 
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+
+    <mrow>
+        <mi>sin &alpha; </mi><mo>-</mo> <mi>sin &beta;</mi>
+        </mrow>
+        <mo>=</mo>
+    <mrow>
+        <mi>2 cos</mi>
+        <mo>(</mo>
+        <mfrac>
+        <mrow>
+            <mi>&alpha; + &beta;</mi></mrow>
+        <mrow>
+            <mn>2</mn></mrow>
+        </mfrac>
+        <mo>)</mo>
+        <mi>sin</mi>
+        <mo>(</mo>
+        <mfrac>
+        <mrow>
+            <mi>&alpha; </mi><mo>-</mo> <mi> &beta;</mi></mrow>
+        <mrow>
+            <mn>2</mn></mrow>
+        </mfrac>
+        <mo>)</mo>
+    </mrow>
+</math>
+        
+             </div>
+</div>
+    </form>
+	<br>
+	<br>
+	<div>
+	<input type="button" value="Submit & Next Question"  onclick="javascript:validateRight()" />
+	<input type="button" value="Cancel & Clear Selection"  onclick="javascript:validateClear()" />
+	</div>
+	<script type="text/javascript">
+	function validateRight()
+		{
+			
+			
+			if(document.getElementById('o1').checked) {
+				sessionStorage.setItem('score2',1);
+			}else {
+				sessionStorage.setItem('score2',0 );
+			}
+			
+		location.href="math3.html";
+		}
+	function validateClear()
+		{
+			document.getElementById("o1").checked = false;
+			document.getElementById("o2").checked = false;
+			document.getElementById("o3").checked = false;
+			document.getElementById("o4").checked = false;
+		
+}
+
+</script>
+</body>
+</html>
+

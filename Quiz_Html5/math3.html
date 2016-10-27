@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		.col2-set .col-1 { float:left; width:50%; }
+		.col2-set .col-2 { float:right; width:38.5%; }
+		.col2-set .col-narrow { width:32%; }
+		.col2-set .col-wide { width:65%; }
+	</style>
+</head>
+<body>
+	<div class="col2-set">
+	<h1 style=background-color:#D3D3D3><center>Question 3</center></h1>
+		<div class="col-1">
+			<div align="justify">
+				As per the latest twitter news, complete the article snippet given by selecting the appropriate choices for the blanks.
+			</div>
+			<form>
+			<div class = "col2-set">
+				<div class="col-1">
+					<input type="radio" name="q3" id="o1" data-value="650" onClick = "display(this);" > Option 1 Mark 1 : $650  <br>
+					<input type="radio" name="q3" id="o2" data-value="550" onClick = "display(this);"> Option 2 Mark 1 : $550 <br>
+					<input type="radio" name="q3" id="o3" data-value="450" onClick = "display(this);"> Option 3 Mark 1 : $450 <br>
+				</div>
+				<div class="col-2">
+					<input type="radio" name="qe3" id="o4" data-value="Twitter" onClick = "disp(this);"> Option 1 Mark 2 : Twitter <br>
+					<input type="radio" name="qe3" id="o5" data-value="Google" onClick = "disp(this);"> Option 2 Mark 2 : Google <br>
+					<input type="radio" name="qe3" id="o6" data-value="Facebook" onClick = "disp(this);"> Option 3 Mark 2 : Facebook <br>
+				</div>
+			</div>
+			
+			<div>
+				<input type="button" value="Submit & Next Question"  onclick="javascript:validateRight()" />
+				<input type="button" value="Cancel & Clear Selection"  onclick="javascript:validateClear()" />	
+			</div>
+			
+			<script type="text/javascript">
+			function display(value)
+			{
+			document.getElementById("option1").innerHTML = value.getAttribute("data-value");
+			}
+			function disp(value)
+			{
+			document.getElementById("option2").innerHTML = value.getAttribute("data-value");
+			}
+			function validateRight()
+				{
+					if(document.getElementById('o4').checked && document.getElementById('o1').checked ) {
+						sessionStorage.setItem('score3',1);
+					}else {
+						sessionStorage.setItem('score3',0);
+					}
+					location.href="math4.html"
+				}
+			function validateClear()
+				{
+				document.getElementById("o1").checked = false;
+				document.getElementById("o2").checked = false;
+				document.getElementById("o3").checked = false;
+				document.getElementById("o4").checked = false;
+				document.getElementById("o5").checked = false;
+				document.getElementById("o6").checked = false;
+				document.getElementById("option1").innerHTML="_____";
+				document.getElementById("option2").innerHTML="_____";
+				}
+			</script>
+		</div>
+		<div class="col-2">
+			<div align="justify">
+				Twitter wants more cash. The company announced <mark>$<label id = "option1">_____</label></mark> million debt offerings in a filing today, each with a potential $100 increase
+				provided that the sales are oversubscribed. Assuming full tip, including the $100 million boosters, <mark><label id = "option2"> _____ </label></mark> will raise upto $1.5 
+				billion with the two offerings.
+			</div><br>
+			<div align="justify">
+				Source: http://techcrunch.com/2014/09/twitter raise
+			</div>
+		</div>
+	</div>
+</body>
+</html>

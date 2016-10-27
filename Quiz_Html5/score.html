@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body onload="validateFinish();">
+<h1 style=background-color:#D3D3D3><center>Score Card</center></h1>
+<details>
+  <summary>Quantitative Section</summary>
+  <p> No of questions answered: 2</p>
+  <p>No of correct answers: <span id="correctvalue"></span> </p>
+  <p>Score: <span id="scorevalue"></span> </p>
+</details>
+<details>
+  <summary>Reading Section</summary>
+  <p> No of questions answered: 1</p>
+  <p>No of correct answers:<span id="correctvalue1"> </span></p>
+  <p>Score:<span id="scorevalue1"></span> </p>
+</details>
+<details>
+  <summary>Audio/Video Section</summary>
+  <p> No of questions answered: 1</p>
+  <p>No of correct answers:<span id="correctvalue2"> </span></p>
+  <p>Score:<span id="scorevalue2"></span> </p>
+</details>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<div align="center"><b>Thank You!</div>
+<div style="position: relative">
+      <p style="position: fixed; bottom: 0; width:100%; text-align: center"><input type="button" value="Finish"  onclick="javascript:validateFinish()" /></p>
+ </div>
+<script type="text/javascript">
+			function validateFinish()
+				{
+					var sc = sessionStorage.getItem('score');
+					var sc2 = sessionStorage.getItem('score2');
+					var sc3 = sessionStorage.getItem('score3');
+					var sc4 = sessionStorage.getItem('score4');
+					var sec1 = (parseInt(sc)+parseInt(sc2))*50;
+					document.getElementById('scorevalue').innerHTML = sec1;	
+					document.getElementById('correctvalue').innerHTML = (parseInt(sc)+parseInt(sc2)) ;
+					document.getElementById('scorevalue1').innerHTML = sc3*100;
+					document.getElementById('scorevalue2').innerHTML = sc4*100;
+					document.getElementById('correctvalue1').innerHTML = sc3;
+					document.getElementById('correctvalue2').innerHTML = sc4;
+				}
+</script>
+</body>
+</html>

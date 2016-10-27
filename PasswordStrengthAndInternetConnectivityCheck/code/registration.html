@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+    .col2-set .col-1 { float:left; width:30%; }
+    .col2-set .col-2 { float:right; width:70%; }
+    .col2-set .col-narrow { width:32%; }
+    .col2-set .col-wide { width:65%; }
+    .passwordReq{
+                border: 1px solid black;
+                border-radius:5px;
+                width:300px;
+                padding-left: 5px;
+                display:none;
+              }
+
+    .login{
+      position:relative;
+      left:460px;
+      width:400px;
+      padding:10px;}
+    input {`display: block;
+      width:150px;
+      float: left;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: solid 1px #999;
+      border-radius: 5px;
+      font: normal 12px Arial;`}
+      textarea {`display: block;
+        width:200px;
+        float: left;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: solid 1px #999;
+        border-radius: 5px;
+        font: normal 12px Arial;`}
+    .label1{`display: block;
+      width: 150px;
+      text-align: right;
+      float: left;
+      padding: 11px 10px 0 0;
+      font:bold 13px Arial;
+      color:black;`}
+    </style>
+  </head>
+  <body>
+    <p id="status" style="display:none;color:red;">No internet connection !</p>
+
+    <div>
+      <img src="arrow.jpg" style="width:40px;height:30px;float:left;">
+      <h2 style="width:40px;height:40px;margin-left:50px;font-style:italic;font-family:Courier New;">Registration</h2>
+      <HR WIDTH="100%">
+    </div>
+  <form onsubmit="return validateSubmit()">
+    <div class="col2-set">
+      <div class="col-1">
+      <label class= "label1">User Name</label><input type="text" name="username" value="" required placeholder="Username or Email" id="uname"/>
+      <label class= "label1">Password</label><input type="password" required name="pwd" value="" placeholder="Password" id="pwd" onkeyup="checkPwd(this)">
+      <label class="label1">Strength</label>
+      <progress id="pwdStrength" value="0" max="100"></progress></p>
+      <label class= "label1">Verify Password</label><input type="password" name="vpassword" required value="" placeholder="Re-Enter Password" id="vpwd">
+      <label class= "label1">Email Address</label><input type="email" name="emailadd" value="" required placeholder="xyz@gmail.com" id="emailad">
+      <label class= "label1">Verify Email Address</label> <input type="email" name="vemailadd" required value="" placeholder="xyz@gmail.com" id="vemail">
+      <label class= "label1">Security Question 1</label>
+        <input list="location">
+        <datalist id="location">
+        <option value="Sum of 2 + 3 =">
+        <option value="Sum of 100 + 200 =">
+        <option value="23 * 100 =">
+        <option value="Captial of India?">
+        <option value="Captial of USA?">
+        </datalist>
+      <label class= "label1">Security Answer 1</label> <input type="text" name="sa1" value="" id="sa1">
+      <label class= "label1">Security Question 2</label>
+        <input list="location">
+      <label class= "label1">Security Answer 2</label> <input type="text" name="sa2" value="" id="sa2">
+      <label class= "label1">Mobile</label><input type="text" name="mobile" value="" pattern="[0-9]{10}" placeholder="10 - Digit number" id="mobile">
+      <label class= "label1">Address</label><textarea id="address" name="address" rows="5" cols="50"></textarea>
+      <label class= "label1" style="display: block;float:right;text-align:left;font-family:Arial;width:350px;padding: 8px;">Areas you're interested in, please enter one or more:</label>
+      <label class= "label1"></label><textarea name="interest" rows="5" cols="50"></textarea>
+      <input type="submit" style="float:left;" value="Register" />
+      <input type="reset" style="float:right;" value="Cancel" />
+
+    </div>
+
+    <div class="col-2">
+      <div class="passwordReq">
+        <p>
+      <img id="uimg" src="wrong.jpg" style="width:20px;height:20px;float:left;">
+      <label> UpperCase Alphabet</label><br>
+    </p>
+    <p>
+      <img id="limg" src="wrong.jpg" style="width:20px;height:20px;float:left;">
+      <label> LowerCase Alphabet</label><br>
+    </p>
+    <p>
+      <img id="simg" src="wrong.jpg" style="width:20px;height:20px;float:left;">
+      <label> Special Character</label><br>
+    </p>
+    <p>
+      <img id="dimg" src="wrong.jpg" style="width:20px;height:20px;float:left;">
+      <label> Atleast one digit</label><br>
+    </p>
+    <p>
+      <img id="mimg" src="wrong.jpg" style="width:20px;height:20px;float:left;">
+      <label> UserID and password shouldn't match</label><br>
+    </p>
+    <p>
+      <img id="lenimg" src="wrong.jpg" style="width:20px;height:20px;float:left;">
+      <label>Minimum length of 8</label><br>
+    </p>
+      </div>
+    </div>
+    </div>
+</form>
+    <script type="text/javascript">
+
+    function checkPwd(pwd){
+      var strength = 0;
+      var number, alpha, calpha, length, schar;
+      number = /(?=.*\d)/;
+      alpha = /(?=.*[a-z])/;
+      calpha = /(?=.*[A-Z])/;
+      length = /.{8,}/;
+      schar = /(?=.*[!,#,%,$])/;
+      if(schar.test(pwd.value))
+      {
+          strength = strength + 1;
+          document.getElementById('simg').src="right.jpg";
+      }
+      else {
+        document.getElementById('simg').src="wrong.jpg";
+      }
+      if(number.test(pwd.value))
+      {
+          strength = strength + 1;
+          document.getElementById('dimg').src="right.jpg";
+      }
+      else {
+        document.getElementById('dimg').src="wrong.jpg";
+      }
+      if(alpha.test(pwd.value))
+      {
+          strength = strength + 1;
+          document.getElementById('limg').src="right.jpg";
+      }
+      else {
+        document.getElementById('limg').src="wrong.jpg";
+      }
+      if(calpha.test(pwd.value))
+      {
+          strength = strength + 1;
+          document.getElementById('uimg').src="right.jpg";
+      }
+      else {
+        document.getElementById('uimg').src="wrong.jpg";
+      }
+      if(length.test(pwd.value))
+      {
+          strength = strength + 1;
+          document.getElementById('lenimg').src="right.jpg";
+      }
+      else {
+        document.getElementById('lenimg').src="wrong.jpg";
+      }
+      if(document.getElementById('pwd').value==document.getElementById('uname').value)
+      {
+          document.getElementById('mimg').src="wrong.jpg";
+      }
+      else {
+        document.getElementById('mimg').src="right.jpg";
+      }
+      var progressValue = (strength/5)*100;
+      document.getElementById('pwdStrength').value=progressValue;
+    }
+    function validateSubmit(){
+      var pass = document.getElementById('pwd').value;
+      var vpass = document.getElementById('vpwd').value;
+      var mail = document.getElementById('emailad').value;
+      var vmail = document.getElementById('vemail').value;
+      var uid = document.getElementById('uname').value;
+      var phno = document.getElementById('mobile').value;
+      var addr = document.getElementById('address').value;
+
+      if(pass!=vpass){
+        alert("Password fields do not match");
+      }
+      if( mail!=vmail){
+        alert("emails do not match");
+      }
+        localStorage.setItem("UserID", uid );
+        localStorage.setItem("Password", pass );
+        localStorage.setItem("E-mail", mail );
+        localStorage.setItem("PhoneNumber", phno );
+        localStorage.setItem("Address", addr );
+        window.location.href="success.html";
+      return false;
+    }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$("#pwd").focusin(function(){
+    $('.passwordReq').show();
+});
+$("#pwd").focusout(function(){
+    $('.passwordReq').hide();
+});
+window.addEventListener("offline", function(e) { document.getElementById("status").style.display = 'inline'});
+
+window.addEventListener("online", function(e) { document.getElementById("status").style.display = 'none' });
+</script>
+
+  </body>
+</html>

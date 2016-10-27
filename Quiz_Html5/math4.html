@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.col2-set .col-1 { float:left; width:60%; }
+		.col2-set .col-2 { float:right; width:40%; }
+		.col2-set .col-narrow { width:32%; }
+		.col2-set .col-wide { width:65%; }
+	</style>
+</head>
+<body>
+	<div class="col2-set">
+	<h1 style=background-color:#D3D3D3><center>Question 4</center></h1>
+		<div class="col-1">
+			<div align="justify">
+				Watch the video and answer the following question.<br>
+				What is the source as mentioned in the video?<br>
+				<br>
+			</div>
+			<form>
+			<div class = "col2-set">
+				<div class="col-1">
+					<input type="radio" name="q4" id="o1"> NASA.Gov  <br>
+					<input type="radio" name="q4" id="o2"> Facebook <br>
+				</div>
+				<div class="col-2">
+					<input type="radio" name="q4" id="o3"> Data.Gov <br>
+					<input type="radio" name="q4" id="o4"> XYZ.net <br>
+				</div>
+			</div><br>
+			<div>
+				<input type="button" value="Submit & Next Question"  onclick="javascript:validateRight()" />
+				<input type="button" value="Cancel & Clear Selection"  onclick="javascript:validateClear()" />
+			</div>
+			<script type="text/javascript">
+			function validateRight()
+				{
+					
+					if( document.getElementById('o1').checked ) {
+						sessionStorage.setItem('score4',1);
+					}else {
+						sessionStorage.setItem('score4',0);
+					}
+					
+					window.location.href="math5.html"
+				}
+			function validateClear()
+				{
+				document.getElementById("o1").checked = false;
+				document.getElementById("o2").checked = false;
+				document.getElementById("o3").checked = false;
+				document.getElementById("o4").checked = false;
+		
+				}
+			</script>
+		</div>
+		<div class="col-2">
+			<div align="justify">
+				<iframe width="500" height="315" src="https://www.youtube.com/embed/fVMgnmi2D1w" frameborder="0" allowfullscreen></iframe>			</div><br>
+			<div align="justify">
+				Source: http://techcrunch.com/2014/09/twitter raise
+			</div>
+		</div>
+	</div>
+</body>
+</html>

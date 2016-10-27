@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.col2-set .col-1 { float:left; width:40%; }
+.col2-set .col-2 { float:right; width:60%; }
+.col2-set .col-narrow { width:32%; }
+.col2-set .col-wide { width:50%; }
+</style>
+</head>
+<body>
+<div class="math">
+<div class="col2-set">
+<h1 style=background-color:#D3D3D3><center>Question 1</center></h1>
+<div class="col-1">
+	<div align="justify">
+		Given points (x1,y1) and (x2,y2) select the formula to find the equation of the given line.
+	</div>
+	<form action="post">
+	<div class = "col2-set">
+		<div class="col-1">
+			<input type="radio" name="q1" id="o1"> y = mx + b <br>
+			
+			<input type="radio" name="q1" id="o2">
+			<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+				<mrow>
+					<mi>y</mi>
+					<mo>-</mo>
+					<msub>
+					<mi>y</mi>
+					<mn>1</mn>
+					</mrow>
+					<mo>=</mo>
+					<mrow>
+					<mi>m</mi>
+					<mo>(</mo>
+					<mi>x</mi>
+					<mo>-</mo>
+					<msub>
+					<mi>x</mi>
+					<mn>1</mn>
+					</msub>
+					<mo>)</mo>
+				</mrow>
+			</math>
+			<br>
+		</div>
+		
+		<div class="col-2">
+			<input type="radio" name="q1" id="o3"> 
+			<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+<msup>
+    <mrow>
+      <mo>(</mo>
+        <mrow>
+          <mrow><mi>x</mi></mrow>
+          <mo>-</mo>
+          <mrow><mi>h</mi></mrow>
+        </mrow>
+      <mo>)</mo>
+    </mrow>
+    <mn>2</mn>
+  </msup>
+    <mo>+</mo>
+    <msup>
+    <mrow>
+      <mo>(</mo>
+        <mrow>
+          <mrow><<mi>y</mi></mrow>
+          <mo>-</mo>
+          <mrow><mi>k</mi></mrow>
+        </mrow>
+      <mo>)</mo>
+    </mrow>
+    <mn>2</mn>
+  </msup>
+    <mo>=</mo>
+    <msup>
+        <mi>r</mi>
+        <mn>2</mn>
+    </msup>  
+</math>
+			<br>
+			
+			<input type="radio" name="q1" id="o4"> 
+			<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+    <mrow>
+    <mi>y</mi>
+    <mo>-</mo>
+    <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+    </mrow>
+    <mo>=</mo>
+        
+        <mfrac>
+    <mrow>
+        <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+        </msub>
+    <mo>-</mo>
+    <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+    </msub>
+        </mrow>
+                <mrow>
+        <msub>
+    <mi>x</mi>
+    <mn>2</mn>
+        </msub>
+    <mo>-</mo>
+    <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+    </msub>
+        </mrow>
+            </mfrac>
+                        <mrow>
+    <mo>(</mo>
+    <mi>x</mi>
+    <mo>-</mo>
+    <msub>
+    <mi>x</mi>
+    <mn>2</mn>
+    </msub>
+        <mo>)</mo>
+        </mrow>
+        
+</math>
+				<br>
+		</div>
+	</div>
+	</form>
+	
+	<br><br>
+	<div>
+	<p>
+	<input type="button" value="Submit & Next Question"  onclick="javascript:validateRight()" />
+	<input type="button" value="Cancel & Clear Selection"  onclick="javascript:validateClear()" />
+	</p>
+	</div>
+	<script type="text/javascript">
+	
+	function validateRight()
+		{		
+			if(document.getElementById('o4').checked) {
+				sessionStorage.setItem('score',1 );
+			}else {
+				sessionStorage.setItem('score',0 );
+			}	
+			window.location.href="math2.html";
+		}
+	function validateClear()
+		{
+			document.getElementById("o1").checked = false;
+			document.getElementById("o2").checked = false;
+			document.getElementById("o3").checked = false;
+			document.getElementById("o4").checked = false;
+		
+}
+</script>
+</div>
+<div class="col-2">
+<div align="center" >&nbsp;&nbsp;&nbsp;&nbsp;
+<svg height="320" width="320">
+	<polyline points="0,15 5,0 12,15  " style="fill:none;stroke:black;stroke-width:3" />
+	<line x1="5" y1="0" x2="5" y2="300" style="fill:none;stroke:black;stroke-width:3" />
+	<line x1="5" y1="300" x2="250" y2="40" style="fill:none;stroke:black;stroke-width:3" />
+	<line x1="5" y1="300" x2="300" y2="300" style="fill:none;stroke:black;stroke-width:3" />
+	<polyline points="285,295 300,300 285,305  " style="fill:none;stroke:black;stroke-width:3" />
+	<circle cx="199" cy="93" r="3" stroke="red" stroke-width="4" fill="red" />
+	<text x="205" y="98" fill="blue" font-size = "20">(x<tspan baseline-shift="sub" font-size = "15">2</tspan>,y<tspan baseline-shift="sub" font-size = "15">2</tspan>)</text>
+	<circle cx="98" cy="201" r="3" stroke="red" stroke-width="4" fill="red" />
+	<text x="105" y="207" fill="blue" font-size = "20">(x<tspan baseline-shift="sub" font-size = "15">1</tspan>,y<tspan baseline-shift="sub" font-size = "15">1</tspan>)</text>
+	
+</svg>
+</div>
+</div>
+</div>
+</div>
+</body>
